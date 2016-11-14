@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/font/flaticon.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/fonts/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="index.html"> -->
+	<title>Demo Lyft</title>
+</head>
+<body>
+	<section class="container-fluid">
+		<!-- <article class="row intro">
+			<img src="img/logo-lyft.png" width="110px" class="logoIntro">
+		</article>
+		<article class="row">
+			<img src="img/logo-lyft.png" width="100px" class="videoLogo">		
+			<video autoplay loop muted id="videoPlay">
+				<source src="img/leonardsoosaymissfitmp4.mp4" type="video/mp4">
+			</video>
+			<div class="videoBotones">
+				<div class="contenedorBoton">
+					<button class="btn-outline-secondary btn botonLog btn-lg">Log in</button>
+					<button class="btn-outline-secondary btn botonSign btn-lg">Sign up</button>
+				</div>
+			</div>
+		</article> -->
+		<article class="row">
+			<div class="validacion">
+				<div class="text-xs-center">
+					<h3 class="p-t-2">
+						<span class="fa-angle-left fa fa-1x m-l-3 firstAngle"></span> Sign up
+					</h3>
+					<p class="credit">Join now for free ride credit</p>
+				</div>
+				<div class="container-fluid">
+					<form class="form-group" id="form-cell" method="post" novalidate action="javascript:void(0)">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        	  						<img src="img/peru_flag.png" width="15px">
+								</button>
+							</div>
+							<input type="tel" name="input-cell" maxlength="12" class="form-control" value="+51" id="input-cell">
+						</div>
+						<label for="input-cell" generated="true" class="error estiloError m-l-2"></label>
+						<p class="text-xs-center">We'll send a text to verify your phone</p>
+						<input class="botoNext" type="submit" id="accept-button" value="Next">
+					</form>
+				</div>
+			</div>
+		</article>
+	</section>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/validation.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

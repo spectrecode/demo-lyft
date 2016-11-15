@@ -21,3 +21,12 @@ $(document).ready(function(){
     	// $(".contenedorVideo:first").fadeOut(700);
     });
 })
+
+$("#verify-reset").click(function(e) {
+    e.preventDefault();
+        var numeroRandom = Math.floor((Math.random() * 1000) + 1);
+        alert("LAB"+ numeroRandom);
+})
+
+
+

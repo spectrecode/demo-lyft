@@ -20,19 +20,21 @@
 			<p class="credit">Join now for free ride credit</p>
 		</article>
 		<article class="container-fluid">
-			<div class="row conten-code">
-				<div class="col-xs-2">L</div>
-				<div class="col-xs-2">A</div>
-				<div class="col-xs-2">B</div>
-				<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1"></div>
-				<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1"></div>
-				<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1"></div>
-			</div>
-			<div class="row text-xs-center">
-				<p class="">Enter de code sent to : <label></label></p>
-				<button class="btn-secondary btn">Resend code</button>
-				<button class="botoNext">Next</button>
-			</div>
+			<form id="form-ver-cell" method="post" novalidate action="javascript:void(0)">
+				<div class="row conten-code">
+					<div class="col-xs-2">L</div>
+					<div class="col-xs-2">A</div>
+					<div class="col-xs-2">B</div>
+					<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1" id="dig-1"></div>
+					<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1" id="dig-2"></div>
+					<div class="col-xs-2"><input type="tel" name="code-tel" maxlength="1" id="dig-3"></div>
+				</div>
+				<div class="row text-xs-center">
+					<p class="">Enter de code sent to : <label id="celular"  type="text"></label></p>
+					<button class="btn-secondary btn" type="submit" id="verify-reset">Resend code</button>
+					<button class="botoNext" type="submit">Next</button>
+				</div>
+			</form>
 		</article>
 	</section>
 	<script type="text/javascript" src="js/jquery.min.js"></script>

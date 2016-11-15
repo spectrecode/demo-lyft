@@ -117,6 +117,21 @@ h3 span{
     bottom: 0;
 }
 
+#form-cell button {
+    padding: 8px 10px;
+    border-right: 0;
+}
+
+#inputCell{
+    border-left: 0;
+}
+
+.swal({
+  title: "Sweet!",
+  text: "Here's a custom image.",
+  imageUrl: "images/thumbs-up.jpg"
+});
+
 .inputCell, .usuario{
     margin: -5px auto;
     max-width: 290px;
@@ -148,21 +163,6 @@ h3 span{
     font-style: italic;
     color: #d60092;
 }
-
-/*.menu {
-    border: none;
-}
-
-.contenedorMenu {
-    border-top: 1px solid rgba(203, 220, 226, 0.24);
-    padding: 5px 0 5px 0;
-}
-
-.listaMenu {
-    color: inherit;
-    position: relative;
-    top: 12px;
-}*/
 
 .imagePerfil {
     background-image: url(../img/image-perfil.jpg);
@@ -276,3 +276,4 @@ article [name="code-tel"]{
     padding-left: 10px;
     /*height: 100%;*/
 }
+

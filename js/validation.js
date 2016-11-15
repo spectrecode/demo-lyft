@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	$("#registro", "#form-cell").submit(function(e) {
+	$("#registro").submit(function(e) {
 		e.preventDefault();
 		}).validate({
 			debug: false,
@@ -17,11 +17,6 @@ $( document ).ready(function() {
 			required: true,
 			email: true
 			},
-
-			"input-cell": {
-			required: true,
-			lettersonly: true
-			},
 		},
 			messages: {
 			"firstname": {
@@ -36,59 +31,76 @@ $( document ).ready(function() {
 			required: "Introduce tu correo.",
 			email: ""
 			}
+		},
+	})
+});
 
-			"input-cell": {
-			required: "Introduce tu numero de celular",
-			input-cell:""
+$(document).ready(function() {
+	$("#form-cell").submit(function(e) {
+		e.preventDefault();
+		}).validate({
+			debug: false,
+
+			rules: {
+			"inputCell": {
+			required: true,			
+			number:true
+			// minLength:9,
+			// maxLength:9,
 			},
 		},
-		highlight: function(element, errorClass) {
-        	$(element).removeClass(errorClass);
-    	}
+			messages: {
+			"inputCell": {
+			required: "Introduce tu numero de celular.",
+			inputCell:""
+			}
+		},
+		submitHandler: function(form){
+			var numeroRandom = Math.floor((Math.random() * 1000) + 1);
+			alert("LAB"+ numeroRandom);
+
+			if(localStorage){
+				var celular = document.getElementById("inputCell");
+				localStorage.setItem("inputCell", celular);
+			}
+			window.location = "verify.html";
+        	form.submit();
+        }
+	})
+});
+
+$(document).ready(function() {
+	$("#form-ver-cell").submit(function(e) {
+		e.preventDefault();
+		}).validate({
+			debug: false,
+
+			rules: {
+			"dig-1": {
+			required: true,			
+			number:true
+			},
+
+			"dig-2": {
+			required: true,			
+			number:true
+			},
+
+			"dig-3": {
+			required: true,			
+			number:true
+			},
+		},
+			// messages: {
+			// "inputCell": {
+			// required: "Introduce tu numero de celular.",
+			// inputCell:""
+			// }
+		// },
+		submitHandler: function(form){
+			alert("ingrese un codigo valido.");			
+			// window.location = "verify.html";
+        	form.submit();
+        }
 	});
-// 	$("#form-cell").submit(function(e) {
-// 		e.preventDefault();
-// 		}).validate({
-// 			debug: false,
-
-// 			rules: {
-// 			"input-cell": {
-// 			required: true,
-// 			lettersonly: true
-// 			},
-// 		},
-// 			messages: {
-// 			"input-cell": {
-// 			required: "Introduce tu numero de celular",
-// 			input:""
-// 			},
-// 		},
-// 		// highlight: function(element, errorClass) {
-//   //       	$(element).removeClass(errorClass);
-//   //   	}
-// 	});
-// });
-
-// $(document).ready(function() {
-// 	$("#form-cell").submit(function(e) {
-// 		e.preventDefault();
-// 		}).validate({
-// 			debug: false,
-
-// 			rules: {
-// 			"input-cell": {
-// 			required: true,
-// 			lettersonly: true
-// 			},
-// 		},
-// 			messages: {
-// 			"input-cell": {
-// 			required: "Introduce tu numero de celular",
-// 			input:""
-// 			},
-// 		},
-// 		// highlight: function(element, errorClass) {
-//   //       	$(element).removeClass(errorClass);
-//   //   	}
-// 	});
-// })
+});

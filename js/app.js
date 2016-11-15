@@ -22,11 +22,14 @@ $(document).ready(function(){
     });
 })
 
-$("#verify-reset").click(function(e) {
-    e.preventDefault();
-        var numeroRandom = Math.floor((Math.random() * 1000) + 1);
-        alert("LAB"+ numeroRandom);
+$(document).ready(function(){
+    $("#verify-reset").click(function(e){
+        // e.preventDefault(){
+            var numeroRandom = Math.floor((Math.random() * 1000) + 1);
+            alert("LAB"+ numeroRandom);
+            // window.location="perfil.html";
+        // }
+    })
 })
-
 
 

@@ -49,14 +49,16 @@ $(document).ready(function() {
 		},
 			messages: {
 			"inputCell": {
-			required: "Introduce tu numero de celular.",
-			inputCell:""
+			inputCell:"",
+			required: "Introduce tu numero de celular."
 			}
 		},
+
 		submitHandler: function(form){
-			var numeroRandom = Math.floor((Math.random() * 1000) + 1);
-			alert("LAB"+ numeroRandom);
-			// window.localStorage.setItem("ariable de lo que se va a almcacernar", y lo que se va a almcacdrnar)
+			var numeroRandom1 = Math.floor(Math.random() * 9);
+			var numeroRandom2 = Math.floor(Math.random() * 9);
+			var numeroRandom3 = Math.floor(Math.random() * 9);
+			alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
 			window.location = "verify.html";
         	form.submit();
         }
@@ -65,9 +67,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#form-ver-cell").submit(function(e) {
-		e.preventDefault();
-	// window.location = 'index.html';
-		
+		e.preventDefault();		
 		}).validate({
 			debug: false,
 
@@ -88,7 +88,6 @@ $(document).ready(function() {
 			},
 		},
 		submitHandler: function(form){
-			alert("ingrese un codigo valido.");			
 			window.location = "perfil.html";
         	form.submit();
         }

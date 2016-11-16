@@ -24,12 +24,46 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#verify-reset").click(function(e){
-        // e.preventDefault(){
-            var numeroRandom = Math.floor((Math.random() * 1000) + 1);
-            alert("LAB"+ numeroRandom);
-            // window.location="perfil.html";
-        // }
+        e.preventDefault();
+            var numeroRandom1 = Math.floor(Math.random() * 9);
+            var numeroRandom2 = Math.floor(Math.random() * 9);
+            var numeroRandom3 = Math.floor(Math.random() * 9);
+
+            alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
+            window.location = "verify.html";
+            form.submit();
     })
 })
 
+$(document).ready(function () {
+    function init() {
+        if (localStorage) {
+            $('#inputCell').val(localStorage["inputCell"]);
+            localStorage.clear();
+        }
+    }
+    $('.inputCell').keyup(function () {
+        localStorage[$(this).attr('id')] = $(this).val();
+    });
 
+    var traerNum = window.localStorage.getItem("inputCell");
+    $("#celular-imp").text(traerNum); 
+
+    init();
+
+    // function randomInput() {
+    $("#form-ver-cell").submit(function(e){ 
+        e.preventDefault(); 
+
+        var contenInput = $(".conten-code").val();
+        var contenCode = $("#dig-1").val() + $("#dig-1").val() + $("#dig-1").val();
+            if (contenCode == contenInput) {
+                return true;
+            }
+            else {
+            // alert("ingrese un codigo valido.");
+            return false;
+            }
+        });
+    // randomInput();
+});

@@ -60,6 +60,21 @@ $(document).ready(function() {
 			var numeroRandom3 = Math.floor(Math.random() * 9);
 			alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
 			window.location = "verify.html";
+
+			function init() {
+        		if (localStorage) {
+            		$('#inputCell').val(localStorage["inputCell"]);
+            			localStorage.clear();
+        		}
+    		}
+
+    		$('.inputCell').keyup(function () {
+        		localStorage[$(this).attr('id')] = $(this).val();
+    		});
+
+    		var traerNum = window.localStorage.getItem("inputCell");
+    			$("#celular-imp").text(traerNum);    
+		    init();
         	form.submit();
         }
 	})
@@ -88,8 +103,17 @@ $(document).ready(function() {
 			},
 		},
 		submitHandler: function(form){
-			window.location = "perfil.html";
+			var contenInput = $(".conten-code").val();
+        	var contenCode = $("#dig-1").val() + $("#dig-2").val() + $("#dig-3").val();
+            	if ((contenCode == contenInput) && (contenInput != "")) {
+            	    return true;
+            	}
+            	else {
+                	alert("ingrese un codigo valido.");
+                	return false;
+            	}
         	form.submit();
         }
-	});
+	}
+	);
 });

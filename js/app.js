@@ -12,11 +12,11 @@ $(document).ready(function(){
 })
 
 $(document).ready(function(){
-	$(".user-datos").click(function(){
-	    $(".profile-map").show(0);
+	$(".icono-profile").click(function(){
+	    $(".profile-map").animate({right:"250px"});
 		});
     $(".profile-map").click(function(){
-	    $(this).hide(0);
+	    $(this).animate({right:"250px"});
         // $(".user-datos").show();
     	// $(".contenedorVideo:first").fadeOut(700);
     });
@@ -30,40 +30,7 @@ $(document).ready(function(){
             var numeroRandom3 = Math.floor(Math.random() * 9);
 
             alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
-            window.location = "verify.html";
+            // window.location = "verify.html";
             form.submit();
     })
 })
-
-$(document).ready(function () {
-    function init() {
-        if (localStorage) {
-            $('#inputCell').val(localStorage["inputCell"]);
-            localStorage.clear();
-        }
-    }
-    $('.inputCell').keyup(function () {
-        localStorage[$(this).attr('id')] = $(this).val();
-    });
-
-    var traerNum = window.localStorage.getItem("inputCell");
-    $("#celular-imp").text(traerNum); 
-
-    init();
-
-    // function randomInput() {
-    $("#form-ver-cell").submit(function(e){ 
-        e.preventDefault(); 
-
-        var contenInput = $(".conten-code").val();
-        var contenCode = $("#dig-1").val() + $("#dig-1").val() + $("#dig-1").val();
-            if (contenCode == contenInput) {
-                return true;
-            }
-            else {
-            // alert("ingrese un codigo valido.");
-            return false;
-            }
-        });
-    // randomInput();
-});

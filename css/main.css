@@ -207,8 +207,8 @@ article [name="code-tel"]{
 }
 
 .user-datos{
-    position: absolute;
-    z-index: -1;
+/*    position: absolute;
+    z-index: -1;*/
 }
 .caja-mapa {
     width: 85%;

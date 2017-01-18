@@ -5,35 +5,35 @@ $( document ).ready(function() {
 			debug: false,
 
 			rules: {
-			"firstname": {
-			required: true,
-			lettersonly: true
+				"firstname": {
+					required: true,
+					lettersonly: true
+				},
+				"last-name": {
+					required: true,
+					lettersonly: true
+				},
+				"email": {
+					required: true,
+					email: true
+				},
 			},
-			"last-name": {
-			required: true,
-			lettersonly: true
-			},
-			"email": {
-			required: true,
-			email: true
-			},
-		},
 			messages: {
-			"firstname": {
-			required: "Introduce tu nombre y apellido.",
-			firstname:""
-			},
-			"last-name": {
+				"firstname": {
+					required: "Introduce tu nombre y apellido.",
+					firstname:""
+				},
+				"last-name": {
 			// required: remove(),
-			last:""
+					last:""
+				},
+				"email": {
+					required: "Introduce tu correo.",
+					email: ""
+				}
 			},
-			"email": {
-			required: "Introduce tu correo.",
-			email: ""
-			}
-		},
-	})
-});
+		})
+	});
 
 $(document).ready(function() {
 	$("#form-cell").submit(function(e) {
@@ -42,29 +42,26 @@ $(document).ready(function() {
 			debug: false,
 
 			rules: {
-			"inputCell": {
-			required: true,			
-			number:true
+				"inputCell": {
+					required: true,			
+					number:true
+				},
 			},
-		},
 			messages: {
-			"inputCell": {
-			inputCell:"",
-			required: "Introduce tu numero de celular."
-			}
-		},
+				"inputCell": {
+					inputCell:"",
+					// required: "Introduce tu numero de celular."
+				}
+			},
 
 		submitHandler: function(form){
-			var numeroRandom1 = Math.floor(Math.random() * 9);
-			var numeroRandom2 = Math.floor(Math.random() * 9);
-			var numeroRandom3 = Math.floor(Math.random() * 9);
-			alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
+			random();
 			window.location = "verify.html";
 
 			function init() {
-        		if (localStorage) {
-            		$('#inputCell').val(localStorage["inputCell"]);
-            			localStorage.clear();
+       			if (localStorage) {
+    	   			$('#inputCell').val(localStorage["inputCell"]);
+           				localStorage.clear();
         		}
     		}
 
@@ -72,9 +69,11 @@ $(document).ready(function() {
         		localStorage[$(this).attr('id')] = $(this).val();
     		});
 
-    		var traerNum = window.localStorage.getItem("inputCell");
+   			var traerNum = window.localStorage.getItem("inputCell");
     			$("#celular-imp").text(traerNum);    
-		    init();
+		
+			init();
+        
         	form.submit();
         }
 	})
@@ -87,33 +86,47 @@ $(document).ready(function() {
 			debug: false,
 
 			rules: {
-			"dig-1": {
-			required: true,			
-			number:true
-			},
+				"dig-1": {
+					required: true,			
+					number:true
+				},
 
-			"dig-2": {
-			required: true,			
-			number:true
-			},
+				"dig-2": {
+					required: true,			
+					number:true
+				},
 
-			"dig-3": {
-			required: true,			
-			number:true
+				"dig-3": {
+					required: true,			
+					number:true
+				},
 			},
-		},
-		submitHandler: function(form){
-			var contenInput = $(".conten-code").val();
-        	var contenCode = $("#dig-1").val() + $("#dig-2").val() + $("#dig-3").val();
-            	if ((contenCode == contenInput) && (contenInput != "")) {
-            	    return true;
-            	}
-            	else {
-                	alert("ingrese un codigo valido.");
-                	return false;
-            	}
-        	form.submit();
-        }
-	}
+			submitHandler: 
+				function verificandoCod(){
+					var contenInput = $(".conten-code").val();
+					var contenCode = $("#dig-1").val() + $("#dig-2").val() + $("#dig-3").val();
+						if ((contenCode == contenInput) && (contenInput != "")) {
+						    return true;
+						    window.location = "perfil.html"
+						}
+						else {
+			    			alert("ingrese un codigo valido.");
+			    			return false;
+						}
+				verificandoCod();
+        	}
+		}
 	);
+	$("#verify-reset").click(random);
 });
+
+
+function random(){
+    var numeroRandom1 = Math.floor(Math.random() * 9);
+    var numeroRandom2 = Math.floor(Math.random() * 9);
+    var numeroRandom3 = Math.floor(Math.random() * 9);
+
+    // localStorage.getItem(numeroRandom1+numeroRandom2+numeroRandom3);
+
+    alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
+}

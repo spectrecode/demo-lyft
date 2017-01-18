@@ -22,15 +22,15 @@ $(document).ready(function(){
     });
 })
 
-$(document).ready(function(){
-    $("#verify-reset").click(function(e){
-        e.preventDefault();
-            var numeroRandom1 = Math.floor(Math.random() * 9);
-            var numeroRandom2 = Math.floor(Math.random() * 9);
-            var numeroRandom3 = Math.floor(Math.random() * 9);
+// $(document).ready(function(){
+//     $("#verify-reset").click(function(e){
+//         e.preventDefault();
+//             var numeroRandom1 = Math.floor(Math.random() * 9);
+//             var numeroRandom2 = Math.floor(Math.random() * 9);
+//             var numeroRandom3 = Math.floor(Math.random() * 9);
 
-            alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
-            // window.location = "verify.html";
-            form.submit();
-    })
-})
+//             alert("LAB"+ numeroRandom1 + numeroRandom2 + numeroRandom3);
+//             // window.location = "verify.html";
+//     })
+// })
+

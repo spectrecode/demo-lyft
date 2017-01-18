@@ -171,6 +171,15 @@ h3 span{
     background-position-x: -71px;
 }
 
+.imagePerfil i{
+    width: 100vw;
+}
+
+.imagePerfil div{
+    border: none;
+    background: rgba(176, 196, 222, 0.44);
+}
+
 .ins-desde{
     font-size: 12px;
     background-color: rgb(225, 231, 234);
@@ -185,6 +194,10 @@ h3 span{
 
 .caja-col-info{
     margin-bottom: 15px;
+}
+
+.caja-col-info [name="perfil-ubic"]{
+    border:none;
 }
 
 article [name="code-tel"]{
